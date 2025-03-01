@@ -28,4 +28,6 @@ public class Scene {
             object.render();
         }
     }
+
+    void move(float deltaX, float deltaY, float deltaZ) {}
 }

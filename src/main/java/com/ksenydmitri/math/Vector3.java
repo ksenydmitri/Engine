@@ -52,8 +52,13 @@ public class Vector3 {
     }
 
     // Преобразование в 2D-координаты (простая проекция)
-    public Vector2 project(double fov, double viewDistance) {
-        double scale = fov / (viewDistance + z);
-        return new Vector2(x * scale, y * scale);
+    public Vector2 project(double viewWidth, double viewHeight) {
+        double halfViewWidth = viewWidth / 2.0;
+        double halfViewHeight = viewHeight / 2.0;
+        return new Vector2(x * halfViewWidth + halfViewWidth, -y * halfViewHeight + halfViewHeight);
+    }
+
+    public Vector4 toVector4() {
+        return new Vector4(x, y, z, 1.0);
     }
 }

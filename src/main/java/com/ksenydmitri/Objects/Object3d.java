@@ -27,4 +27,12 @@ public class Object3d {
     public Color getColor() {
         return color;
     }
+
+    public void move(int dx, int dy, int dz) {
+        for (Vector3 v : vertices) {
+            v.x += dx;
+            v.y += dy;
+            v.z += dz;
+        }
+    }
 }
